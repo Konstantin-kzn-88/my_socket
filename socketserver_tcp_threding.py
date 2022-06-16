@@ -13,5 +13,5 @@ class EchoTCPHandler(socketserver.BaseRequestHandler):
         self.request.sendall(b)
 
 if __name__ == '__main__':
-    with socketserver.TCPServer(('', 8888), EchoTCPHandler) as server:
+    with ThredingTCPServer(('', 8888), EchoTCPHandler) as server:
         server.serve_forever()
